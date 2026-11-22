@@ -124,9 +124,9 @@ if (-not (Test-Path -LiteralPath $SkillsRoot)) {
     exit 1
 }
 
-$skills = Get-ChildItem -LiteralPath $SkillsRoot -Directory -ErrorAction Stop |
+$skills = @(Get-ChildItem -LiteralPath $SkillsRoot -Directory -ErrorAction Stop |
     Where-Object { Test-Path -LiteralPath (Join-Path $_.FullName 'SKILL.md') } |
-    Sort-Object Name
+    Sort-Object Name)
 
 if (-not $skills) {
     Write-Warning "No skill folders with SKILL.md found under $SkillsRoot"
