@@ -1,0 +1,159 @@
+<mxfile host="app.diagrams.net" pages="1">
+  <diagram id="activity-multi-role-template" name="Task 1 - Approval Workflow">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="2360" pageHeight="1860" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Outer UML Frame -->
+        <mxCell id="frame" parent="1" style="shape=umlFrame;whiteSpace=wrap;width=520;height=35;container=0;collapsible=0;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#000000;strokeColor=#000000;fillColor=#ffffff;" value="Task 1 - Multi-Role Approval Workflow" vertex="1">
+          <mxGeometry x="20" y="20" width="2220" height="1740" as="geometry" />
+        </mxCell>
+
+        <!-- Role 1: Requester -->
+        <mxCell id="lane_requester" parent="1" style="swimlane;horizontal=1;startSize=30;collapsible=0;rounded=0;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#000000;strokeColor=#000000;fillColor=#ffffff;" value="Requester" vertex="1">
+          <mxGeometry x="40" y="80" width="400" height="1640" as="geometry" />
+        </mxCell>
+        <mxCell id="start" parent="lane_requester" style="ellipse;aspect=fixed;fillColor=#000000;strokeColor=#000000;fontFamily=Helvetica;fontSize=14;" value="" vertex="1">
+          <mxGeometry x="180" y="80" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="act_submit" parent="lane_requester" style="rounded=1;arcSize=30;whiteSpace=wrap;align=center;verticalAlign=middle;spacing=8;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#000000;strokeColor=#000000;fillColor=#ffffff;" value="Fill form and submit request" vertex="1">
+          <mxGeometry x="60" y="200" width="280" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="act_revise" parent="lane_requester" style="rounded=1;arcSize=30;whiteSpace=wrap;align=center;verticalAlign=middle;spacing=8;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#000000;strokeColor=#000000;fillColor=#ffffff;" value="Revise request fields based on&#10;reviewer feedback" vertex="1">
+          <mxGeometry x="60" y="840" width="280" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Role 2: Reviewer -->
+        <mxCell id="lane_reviewer" parent="1" style="swimlane;horizontal=1;startSize=30;collapsible=0;rounded=0;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#000000;strokeColor=#000000;fillColor=#ffffff;" value="Reviewer" vertex="1">
+          <mxGeometry x="440" y="80" width="440" height="1640" as="geometry" />
+        </mxCell>
+        <mxCell id="act_review" parent="lane_reviewer" style="rounded=1;arcSize=30;whiteSpace=wrap;align=center;verticalAlign=middle;spacing=8;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#000000;strokeColor=#000000;fillColor=#ffffff;" value="Inspect submitted request and&#10;choose decision" vertex="1">
+          <mxGeometry x="60" y="640" width="320" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="dec_review" parent="lane_reviewer" style="rhombus;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#000000;strokeColor=#000000;fillColor=#ffffff;" value="" vertex="1">
+          <mxGeometry x="200" y="860" width="40" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Role 3: System -->
+        <mxCell id="lane_system" parent="1" style="swimlane;horizontal=1;startSize=30;collapsible=0;rounded=0;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#000000;strokeColor=#000000;fillColor=#ffffff;" value="System" vertex="1">
+          <mxGeometry x="880" y="80" width="960" height="1640" as="geometry" />
+        </mxCell>
+        <mxCell id="m_intake" parent="lane_system" style="rhombus;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#000000;strokeColor=#000000;fillColor=#ffffff;" value="" vertex="1">
+          <mxGeometry x="200" y="210" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="act_validate" parent="lane_system" style="rounded=1;arcSize=30;whiteSpace=wrap;align=center;verticalAlign=middle;spacing=8;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#000000;strokeColor=#000000;fillColor=#ffffff;" value="Validate permissions, schema and&#10;policy limits" vertex="1">
+          <mxGeometry x="60" y="320" width="320" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="dec_valid" parent="lane_system" style="rhombus;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#000000;strokeColor=#000000;fillColor=#ffffff;" value="" vertex="1">
+          <mxGeometry x="200" y="480" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="act_reject_val" parent="lane_system" style="rounded=1;arcSize=30;whiteSpace=wrap;align=center;verticalAlign=middle;spacing=8;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#000000;strokeColor=#000000;fillColor=#ffffff;" value="Return validation errors without&#10;creating a request record" vertex="1">
+          <mxGeometry x="560" y="460" width="320" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="end_invalid" parent="lane_system" style="shape=sumEllipse;perimeter=ellipsePerimeter;html=1;backgroundOutline=1;aspect=fixed;fillColor=#ffffff;strokeColor=#000000;fontFamily=Helvetica;fontSize=14;" value="" vertex="1">
+          <mxGeometry x="700" y="620" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="act_approve" parent="lane_system" style="rounded=1;arcSize=30;whiteSpace=wrap;align=center;verticalAlign=middle;spacing=8;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#000000;strokeColor=#000000;fillColor=#ffffff;" value="Persist APPROVED status and&#10;trigger fulfillment" vertex="1">
+          <mxGeometry x="60" y="1060" width="320" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="act_decline" parent="lane_system" style="rounded=1;arcSize=30;whiteSpace=wrap;align=center;verticalAlign=middle;spacing=8;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#000000;strokeColor=#000000;fillColor=#ffffff;" value="Persist DECLINED status and&#10;record reviewer reason" vertex="1">
+          <mxGeometry x="560" y="1060" width="320" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="m_final" parent="lane_system" style="rhombus;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#000000;strokeColor=#000000;fillColor=#ffffff;" value="" vertex="1">
+          <mxGeometry x="200" y="1240" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="act_notify" parent="lane_system" style="rounded=1;arcSize=30;whiteSpace=wrap;align=center;verticalAlign=middle;spacing=8;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#000000;strokeColor=#000000;fillColor=#ffffff;" value="Send outcome notification and&#10;write audit entry" vertex="1">
+          <mxGeometry x="60" y="1360" width="320" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="end_done" parent="lane_system" style="shape=sumEllipse;perimeter=ellipsePerimeter;html=1;backgroundOutline=1;aspect=fixed;fillColor=#ffffff;strokeColor=#000000;fontFamily=Helvetica;fontSize=14;" value="" vertex="1">
+          <mxGeometry x="200" y="1520" width="40" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Right-Gutter UML Note -->
+        <mxCell id="note_0" parent="1" style="shape=note2;boundedLbl=1;whiteSpace=wrap;size=25;align=left;verticalAlign=top;spacing=14;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#000000;strokeColor=#000000;fillColor=#ffffff;" value="Revised submissions always re-run&#10;full server-side validation through&#10;the intake merge diamond before&#10;re-entering review." vertex="1">
+          <mxGeometry x="1900" y="360" width="320" height="140" as="geometry" />
+        </mxCell>
+
+        <!-- Control Flow Edges (ALL parent="1", unique ports, jumpStyle=arc) -->
+        <mxCell id="e_01" edge="1" parent="1" source="start" target="act_submit" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=24;endArrow=open;endFill=0;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;labelBorderColor=none;whiteSpace=wrap;curved=0;orthogonal=1;jumpStyle=arc;jumpSize=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_02" edge="1" parent="1" source="act_submit" target="m_intake" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=24;endArrow=open;endFill=0;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;labelBorderColor=none;whiteSpace=wrap;curved=0;orthogonal=1;jumpStyle=arc;jumpSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_03" edge="1" parent="1" source="m_intake" target="act_validate" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=24;endArrow=open;endFill=0;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;labelBorderColor=none;whiteSpace=wrap;curved=0;orthogonal=1;jumpStyle=arc;jumpSize=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_04" edge="1" parent="1" source="act_validate" target="dec_valid" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=24;endArrow=open;endFill=0;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;labelBorderColor=none;whiteSpace=wrap;curved=0;orthogonal=1;jumpStyle=arc;jumpSize=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_05" edge="1" parent="1" source="dec_valid" target="act_reject_val" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=24;endArrow=open;endFill=0;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;labelBorderColor=none;whiteSpace=wrap;labelWidth=170;spacing=4;curved=0;orthogonal=1;jumpStyle=arc;jumpSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" value="[invalid request]">
+          <mxGeometry relative="1" x="-0.2" as="geometry" />
+        </mxCell>
+        <mxCell id="e_06" edge="1" parent="1" source="act_reject_val" target="end_invalid" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=24;endArrow=open;endFill=0;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;labelBorderColor=none;whiteSpace=wrap;curved=0;orthogonal=1;jumpStyle=arc;jumpSize=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_07" edge="1" parent="1" source="dec_valid" target="act_review" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=24;endArrow=open;endFill=0;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;labelBorderColor=none;whiteSpace=wrap;labelWidth=170;spacing=4;curved=0;orthogonal=1;jumpStyle=arc;jumpSize=8;exitX=0;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" value="[valid request]">
+          <mxGeometry relative="1" x="-0.4" as="geometry">
+            <Array as="points">
+              <mxPoint x="660" y="580" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_08" edge="1" parent="1" source="act_review" target="dec_review" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=24;endArrow=open;endFill=0;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;labelBorderColor=none;whiteSpace=wrap;curved=0;orthogonal=1;jumpStyle=arc;jumpSize=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_09" edge="1" parent="1" source="dec_review" target="act_revise" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=24;endArrow=open;endFill=0;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;labelBorderColor=none;whiteSpace=wrap;labelWidth=180;spacing=4;curved=0;orthogonal=1;jumpStyle=arc;jumpSize=8;exitX=0;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" value="[changes requested]">
+          <mxGeometry relative="1" x="-0.1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_10" edge="1" parent="1" source="act_revise" target="m_intake" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=24;endArrow=open;endFill=0;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;labelBorderColor=none;whiteSpace=wrap;curved=0;orthogonal=1;jumpStyle=arc;jumpSize=8;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="240" y="420" />
+              <mxPoint x="70" y="420" />
+              <mxPoint x="70" y="160" />
+              <mxPoint x="1100" y="160" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_11" edge="1" parent="1" source="dec_review" target="act_approve" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=24;endArrow=open;endFill=0;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;labelBorderColor=none;whiteSpace=wrap;labelWidth=150;spacing=4;curved=0;orthogonal=1;jumpStyle=arc;jumpSize=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" value="[approved]">
+          <mxGeometry relative="1" x="-0.45" as="geometry">
+            <Array as="points">
+              <mxPoint x="660" y="1060" />
+              <mxPoint x="1100" y="1060" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_12" edge="1" parent="1" source="dec_review" target="act_decline" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=24;endArrow=open;endFill=0;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;labelBorderColor=none;whiteSpace=wrap;labelWidth=150;spacing=4;curved=0;orthogonal=1;jumpStyle=arc;jumpSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" value="[declined]">
+          <mxGeometry relative="1" x="-0.6" as="geometry">
+            <Array as="points">
+              <mxPoint x="1600" y="960" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_13" edge="1" parent="1" source="act_approve" target="m_final" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=24;endArrow=open;endFill=0;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;labelBorderColor=none;whiteSpace=wrap;curved=0;orthogonal=1;jumpStyle=arc;jumpSize=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_14" edge="1" parent="1" source="act_decline" target="m_final" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=24;endArrow=open;endFill=0;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;labelBorderColor=none;whiteSpace=wrap;curved=0;orthogonal=1;jumpStyle=arc;jumpSize=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1600" y="1340" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_15" edge="1" parent="1" source="m_final" target="act_notify" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=24;endArrow=open;endFill=0;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;labelBorderColor=none;whiteSpace=wrap;curved=0;orthogonal=1;jumpStyle=arc;jumpSize=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_16" edge="1" parent="1" source="act_notify" target="end_done" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=24;endArrow=open;endFill=0;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;labelBorderColor=none;whiteSpace=wrap;curved=0;orthogonal=1;jumpStyle=arc;jumpSize=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Dashed Note Connector -->
+        <mxCell id="edge_note_0" edge="1" parent="1" source="act_validate" target="note_0" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=24;startArrow=none;endArrow=none;endFill=0;dashed=1;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;labelBorderColor=none;whiteSpace=wrap;curved=0;orthogonal=1;jumpStyle=arc;jumpSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

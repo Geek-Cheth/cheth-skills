@@ -1,0 +1,180 @@
+<mxfile host="app.diagrams.net" pages="1">
+  <diagram id="subsystem-overview-template" name="System Overview &amp; Subsystems">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="2680" pageHeight="1320" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Outer UML Frame -->
+        <mxCell id="frame" parent="1" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;recursiveResize=0;container=0;collapsible=0;width=580;height=40;fontFamily=Helvetica;fontSize=14;fontStyle=1;strokeColor=#000000;fillColor=#ffffff;fontColor=#000000;" value="Platform System — System Overview &amp; Subsystems" vertex="1">
+          <mxGeometry x="20" y="20" width="2560" height="1200" as="geometry" />
+        </mxCell>
+
+        <!-- External Services Backdrop (drawn first so it sits behind external blocks) -->
+        <mxCell id="infra_zone" parent="1" style="html=1;align=right;verticalAlign=top;rounded=1;absoluteArcSize=1;arcSize=30;dashed=0;spacingTop=12;spacingRight=24;whiteSpace=wrap;fontFamily=Helvetica;fontSize=14;fontStyle=1;fontColor=#ae4132;fillColor=#fad9d5;strokeColor=#ae4132;" value="External Services &amp; Data Layer" vertex="1">
+          <mxGeometry x="1900" y="80" width="640" height="1100" as="geometry" />
+        </mxCell>
+
+        <!-- Column 1: Entry & Vector Client Blocks (NO IMAGES) -->
+        <mxCell id="start" parent="1" style="ellipse;aspect=fixed;fillColor=#000000;strokeColor=#000000;fontFamily=Helvetica;fontSize=14;" value="" vertex="1">
+          <mxGeometry x="60" y="290" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="client_user" parent="1" style="rounded=1;arcSize=12;whiteSpace=wrap;align=center;verticalAlign=middle;spacing=12;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#000000;strokeColor=#000000;fillColor=#ffffff;strokeWidth=1.5;" value="&lt;b&gt;User Client Application&lt;/b&gt;&lt;br&gt;&lt;br&gt;Roles: End User, Operator" vertex="1">
+          <mxGeometry x="260" y="250" width="300" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="client_admin" parent="1" style="rounded=1;arcSize=12;whiteSpace=wrap;align=center;verticalAlign=middle;spacing=12;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#000000;strokeColor=#000000;fillColor=#ffffff;strokeWidth=1.5;" value="&lt;b&gt;Admin Web Portal&lt;/b&gt;&lt;br&gt;&lt;br&gt;Roles: System Admin, Auditor" vertex="1">
+          <mxGeometry x="260" y="690" width="300" height="120" as="geometry" />
+        </mxCell>
+
+        <!-- Column 2: Cascading 40x40 Diamond Routing Buses -->
+        <!-- User Client Bus (x=760 -> x=880) -->
+        <mxCell id="d_user_1" parent="1" style="rhombus;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#000000;strokeColor=#000000;fillColor=#ffffff;" value="1" vertex="1">
+          <mxGeometry x="760" y="290" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="d_user_2" parent="1" style="rhombus;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#000000;strokeColor=#000000;fillColor=#ffffff;" value="" vertex="1">
+          <mxGeometry x="880" y="340" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="d_user_3" parent="1" style="rhombus;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#000000;strokeColor=#000000;fillColor=#ffffff;" value="" vertex="1">
+          <mxGeometry x="880" y="540" width="40" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Admin Client Bus (x=680 -> x=800) -->
+        <mxCell id="d_admin_1" parent="1" style="rhombus;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#000000;strokeColor=#000000;fillColor=#ffffff;" value="1" vertex="1">
+          <mxGeometry x="680" y="730" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="d_admin_2" parent="1" style="rhombus;html=1;fontFamily=Helvetica;fontSize=14;fontColor=#000000;strokeColor=#000000;fillColor=#ffffff;" value="" vertex="1">
+          <mxGeometry x="800" y="730" width="40" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Column 3: Core Subsystems (UML 2.5 Behavior Action) -->
+        <mxCell id="sub_1" parent="1" style="shape=mxgraph.uml25.behaviorAction;html=1;rounded=1;absoluteArcSize=1;arcSize=10;align=left;spacingLeft=10;spacingRight=10;whiteSpace=wrap;fontFamily=Helvetica;fontSize=14;fontColor=#000000;strokeColor=#ae4132;fillColor=#fad9d5;" value="&lt;b&gt;1. Authentication &amp;amp; Access Subsystem&lt;/b&gt;&lt;br&gt;&lt;br&gt;• SSO login &amp;amp; session token validation&lt;br&gt;• Role claims &amp;amp; permission gates" vertex="1">
+          <mxGeometry x="1180" y="100" width="440" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="sub_2" parent="1" style="shape=mxgraph.uml25.behaviorAction;html=1;rounded=1;absoluteArcSize=1;arcSize=10;align=left;spacingLeft=10;spacingRight=10;whiteSpace=wrap;fontFamily=Helvetica;fontSize=14;fontColor=#000000;strokeColor=#000000;fillColor=#ffffff;" value="&lt;b&gt;2. Catalog &amp;amp; Schedule Subsystem&lt;/b&gt;&lt;br&gt;&lt;br&gt;• Manage items, plans &amp;amp; active schedules&lt;br&gt;• Calendar overrides &amp;amp; open windows" vertex="1">
+          <mxGeometry x="1180" y="300" width="440" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="sub_3" parent="1" style="shape=mxgraph.uml25.behaviorAction;html=1;rounded=1;absoluteArcSize=1;arcSize=10;align=left;spacingLeft=10;spacingRight=10;whiteSpace=wrap;fontFamily=Helvetica;fontSize=14;fontColor=#000000;strokeColor=#000000;fillColor=#ffffff;" value="&lt;b&gt;3. Core Transaction Subsystem&lt;/b&gt;&lt;br&gt;&lt;br&gt;• Enforce business rules &amp;amp; cutoffs&lt;br&gt;• Atomic create, update &amp;amp; cancel writes" vertex="1">
+          <mxGeometry x="1180" y="500" width="440" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="sub_4" parent="1" style="shape=mxgraph.uml25.behaviorAction;html=1;rounded=1;absoluteArcSize=1;arcSize=10;align=left;spacingLeft=10;spacingRight=10;whiteSpace=wrap;fontFamily=Helvetica;fontSize=14;fontColor=#000000;strokeColor=#000000;fillColor=#ffffff;" value="&lt;b&gt;4. Operations &amp;amp; Reporting Subsystem&lt;/b&gt;&lt;br&gt;&lt;br&gt;• Dashboards, search &amp;amp; reconciliation&lt;br&gt;• Immutable snapshots &amp;amp; CSV/PDF exports" vertex="1">
+          <mxGeometry x="1180" y="700" width="440" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="sub_5" parent="1" style="shape=mxgraph.uml25.behaviorAction;html=1;rounded=1;absoluteArcSize=1;arcSize=10;align=left;spacingLeft=10;spacingRight=10;whiteSpace=wrap;fontFamily=Helvetica;fontSize=14;fontColor=#000000;strokeColor=#000000;fillColor=#ffffff;" value="&lt;b&gt;5. Notifications &amp;amp; Maintenance Subsystem&lt;/b&gt;&lt;br&gt;&lt;br&gt;• Push/email alerts &amp;amp; templates&lt;br&gt;• Scheduled nightly reconciliation jobs" vertex="1">
+          <mxGeometry x="1180" y="960" width="440" height="140" as="geometry" />
+        </mxCell>
+
+        <!-- Column 4: External Services & End Node -->
+        <mxCell id="ext_auth" parent="1" style="shape=mxgraph.uml25.behaviorAction;html=1;rounded=1;absoluteArcSize=1;arcSize=10;align=left;spacingLeft=10;spacingRight=10;whiteSpace=wrap;fontFamily=Helvetica;fontSize=14;fontColor=#000000;strokeColor=#000000;fillColor=#ffffff;" value="&lt;b&gt;Identity Provider&lt;/b&gt;&lt;br&gt;&lt;br&gt;• OAuth 2.0 / OIDC SSO&lt;br&gt;• Token issuance &amp;amp; custom claims" vertex="1">
+          <mxGeometry x="1940" y="120" width="440" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="ext_db" parent="1" style="shape=mxgraph.uml25.behaviorAction;html=1;rounded=1;absoluteArcSize=1;arcSize=10;align=left;spacingLeft=10;spacingRight=10;whiteSpace=wrap;fontFamily=Helvetica;fontSize=14;fontColor=#000000;strokeColor=#000000;fillColor=#ffffff;" value="&lt;b&gt;Primary Database&lt;/b&gt;&lt;br&gt;&lt;br&gt;• Catalogs, schedules &amp;amp; settings&lt;br&gt;• Transactional records &amp;amp; snapshots&lt;br&gt;• Audit logs &amp;amp; notification state" vertex="1">
+          <mxGeometry x="1940" y="300" width="440" height="580" as="geometry" />
+        </mxCell>
+        <mxCell id="ext_worker" parent="1" style="shape=mxgraph.uml25.behaviorAction;html=1;rounded=1;absoluteArcSize=1;arcSize=10;align=left;spacingLeft=10;spacingRight=10;whiteSpace=wrap;fontFamily=Helvetica;fontSize=14;fontColor=#000000;strokeColor=#000000;fillColor=#ffffff;" value="&lt;b&gt;Messaging &amp;amp; Job Scheduler&lt;/b&gt;&lt;br&gt;&lt;br&gt;• Push / email delivery gateways&lt;br&gt;• Cron workers &amp;amp; background queues" vertex="1">
+          <mxGeometry x="1940" y="960" width="440" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="end_sys" parent="1" style="shape=sumEllipse;perimeter=ellipsePerimeter;html=1;backgroundOutline=1;aspect=fixed;fillColor=#ffffff;strokeColor=#000000;fontFamily=Helvetica;fontSize=14;" value="" vertex="1">
+          <mxGeometry x="2460" y="1010" width="40" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Edges: Entry & Client Sessions -->
+        <mxCell id="e_01" edge="1" parent="1" source="start" target="client_user" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=24;endArrow=classic;endFill=1;html=1;fontFamily=Helvetica;fontSize=13;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;labelBorderColor=none;whiteSpace=wrap;curved=0;orthogonal=1;jumpStyle=arc;jumpSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" value="0.1 Launch App">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_02" edge="1" parent="1" source="client_user" target="d_user_1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=24;endArrow=classic;endFill=1;html=1;fontFamily=Helvetica;fontSize=13;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;labelBorderColor=none;whiteSpace=wrap;curved=0;orthogonal=1;jumpStyle=arc;jumpSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" value="1.1 User Session">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_03" edge="1" parent="1" source="client_admin" target="d_admin_1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=24;endArrow=classic;endFill=1;html=1;fontFamily=Helvetica;fontSize=13;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;labelBorderColor=none;whiteSpace=wrap;curved=0;orthogonal=1;jumpStyle=arc;jumpSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" value="1.2 Admin Session">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Edges: User Diamond Cascade -> Subsystems -->
+        <mxCell id="e_04" edge="1" parent="1" source="d_user_1" target="sub_1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=24;endArrow=classic;endFill=1;html=1;fontFamily=Helvetica;fontSize=13;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;labelBorderColor=none;whiteSpace=wrap;curved=0;orthogonal=1;jumpStyle=arc;jumpSize=8;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.7;entryDx=0;entryDy=0;entryPerimeter=0;" value="1.4 Authenticate User App">
+          <mxGeometry relative="1" x="0.3" as="geometry">
+            <Array as="points">
+              <mxPoint x="780" y="198" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_05" edge="1" parent="1" source="d_user_1" target="d_user_2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=24;endArrow=classic;endFill=1;html=1;fontFamily=Helvetica;fontSize=13;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;labelBorderColor=none;whiteSpace=wrap;curved=0;orthogonal=1;jumpStyle=arc;jumpSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="900" y="310" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_06" edge="1" parent="1" source="d_user_2" target="sub_2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=24;endArrow=classic;endFill=1;html=1;fontFamily=Helvetica;fontSize=13;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;labelBorderColor=none;whiteSpace=wrap;curved=0;orthogonal=1;jumpStyle=arc;jumpSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.3;entryDx=0;entryDy=0;entryPerimeter=0;" value="2.1 Browse Catalog">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="960" y="360" />
+              <mxPoint x="960" y="342" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_07" edge="1" parent="1" source="d_user_2" target="d_user_3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=24;endArrow=classic;endFill=1;html=1;fontFamily=Helvetica;fontSize=13;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;labelBorderColor=none;whiteSpace=wrap;curved=0;orthogonal=1;jumpStyle=arc;jumpSize=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_08" edge="1" parent="1" source="d_user_3" target="sub_3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=24;endArrow=classic;endFill=1;html=1;fontFamily=Helvetica;fontSize=13;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;labelBorderColor=none;whiteSpace=wrap;curved=0;orthogonal=1;jumpStyle=arc;jumpSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.43;entryDx=0;entryDy=0;entryPerimeter=0;" value="3.1 Create / Update / Cancel">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Edges: Admin Diamond Cascade -> Subsystems -->
+        <mxCell id="e_09" edge="1" parent="1" source="d_admin_1" target="sub_1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=24;endArrow=classic;endFill=1;html=1;fontFamily=Helvetica;fontSize=13;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;labelBorderColor=none;whiteSpace=wrap;curved=0;orthogonal=1;jumpStyle=arc;jumpSize=8;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.3;entryDx=0;entryDy=0;entryPerimeter=0;" value="1.3 Authenticate Admin Portal">
+          <mxGeometry relative="1" x="0.6" as="geometry">
+            <Array as="points">
+              <mxPoint x="700" y="142" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_10" edge="1" parent="1" source="d_admin_1" target="d_admin_2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=24;endArrow=classic;endFill=1;html=1;fontFamily=Helvetica;fontSize=13;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;labelBorderColor=none;whiteSpace=wrap;curved=0;orthogonal=1;jumpStyle=arc;jumpSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_11" edge="1" parent="1" source="d_admin_2" target="sub_2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=24;endArrow=classic;endFill=1;html=1;fontFamily=Helvetica;fontSize=13;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;labelBorderColor=none;whiteSpace=wrap;curved=0;orthogonal=1;jumpStyle=arc;jumpSize=8;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.7;entryDx=0;entryDy=0;entryPerimeter=0;" value="2.2 Manage Catalog">
+          <mxGeometry relative="1" x="0.55" as="geometry">
+            <Array as="points">
+              <mxPoint x="820" y="398" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_12" edge="1" parent="1" source="d_admin_2" target="sub_4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=24;endArrow=classic;endFill=1;html=1;fontFamily=Helvetica;fontSize=13;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;labelBorderColor=none;whiteSpace=wrap;curved=0;orthogonal=1;jumpStyle=arc;jumpSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.36;entryDx=0;entryDy=0;entryPerimeter=0;" value="4.1 Dashboards &amp; Reports">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_13" edge="1" parent="1" source="d_admin_2" target="sub_5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=24;endArrow=classic;endFill=1;html=1;fontFamily=Helvetica;fontSize=13;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;labelBorderColor=none;whiteSpace=wrap;curved=0;orthogonal=1;jumpStyle=arc;jumpSize=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" value="5.1 Edit Templates">
+          <mxGeometry relative="1" x="0.35" as="geometry">
+            <Array as="points">
+              <mxPoint x="820" y="1030" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Edges: Subsystems -> External Services (Unique Aligned Ports) -->
+        <mxCell id="e_14" edge="1" parent="1" source="sub_1" target="ext_auth" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=24;endArrow=classic;endFill=1;html=1;fontFamily=Helvetica;fontSize=13;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;labelBorderColor=none;whiteSpace=wrap;curved=0;orthogonal=1;jumpStyle=arc;jumpSize=8;exitX=1;exitY=0.57;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" value="1.5 Verify Token &amp; Roles">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_15" edge="1" parent="1" source="sub_2" target="ext_db" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=24;endArrow=classic;endFill=1;html=1;fontFamily=Helvetica;fontSize=13;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;labelBorderColor=none;whiteSpace=wrap;curved=0;orthogonal=1;jumpStyle=arc;jumpSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.12;entryDx=0;entryDy=0;entryPerimeter=0;" value="2.3 Sync Catalog &amp; Plans">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_16" edge="1" parent="1" source="sub_3" target="ext_db" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=24;endArrow=classic;endFill=1;html=1;fontFamily=Helvetica;fontSize=13;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;labelBorderColor=none;whiteSpace=wrap;curved=0;orthogonal=1;jumpStyle=arc;jumpSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.47;entryDx=0;entryDy=0;entryPerimeter=0;" value="3.2 Transactional Write">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_17" edge="1" parent="1" source="sub_4" target="ext_db" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=24;endArrow=classic;endFill=1;html=1;fontFamily=Helvetica;fontSize=13;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;labelBorderColor=none;whiteSpace=wrap;curved=0;orthogonal=1;jumpStyle=arc;jumpSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.81;entryDx=0;entryDy=0;entryPerimeter=0;" value="4.2 Query Totals &amp; Snapshots">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_18" edge="1" parent="1" source="sub_5" target="ext_db" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=24;endArrow=classic;endFill=1;html=1;fontFamily=Helvetica;fontSize=13;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;labelBorderColor=none;whiteSpace=wrap;curved=0;orthogonal=1;jumpStyle=arc;jumpSize=8;exitX=1;exitY=0.2;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.94;entryDx=0;entryDy=0;entryPerimeter=0;" value="5.2 Log Delivery State">
+          <mxGeometry relative="1" x="-0.4" as="geometry">
+            <Array as="points">
+              <mxPoint x="1840" y="988" />
+              <mxPoint x="1840" y="845" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_19" edge="1" parent="1" source="sub_5" target="ext_worker" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=24;endArrow=classic;endFill=1;html=1;fontFamily=Helvetica;fontSize=13;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;labelBorderColor=none;whiteSpace=wrap;curved=0;orthogonal=1;jumpStyle=arc;jumpSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" value="5.3 Dispatch Alerts &amp; Jobs">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_20" edge="1" parent="1" source="ext_worker" target="end_sys" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=24;endArrow=classic;endFill=1;html=1;fontFamily=Helvetica;fontSize=13;fontColor=#000000;strokeColor=#000000;labelBackgroundColor=#ffffff;labelBorderColor=none;whiteSpace=wrap;curved=0;orthogonal=1;jumpStyle=arc;jumpSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
